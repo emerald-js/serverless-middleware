@@ -101,5 +101,8 @@ typings/
 # JetBrains
 /.idea/
 
+# VSCode
+/.vscode/
+
 # Generated
 /config/_actions.json
