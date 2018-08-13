@@ -1,5 +1,5 @@
-export { default as CORS } 		from './cors'
-export { default as Datbase } 	from './database'
+export { default as Cors } 		from './cors'
+export { default as Database } 	from './database'
 export { default as JWT } 		from './jwt'
 export { default as SSM } 		from './ssm'
 export { default as Validate } 	from './validate'
