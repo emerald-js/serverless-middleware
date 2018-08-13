@@ -1,3 +1,4 @@
+
 export default class SSM
 
 	done: false
@@ -5,7 +6,7 @@ export default class SSM
 
 	constructor: (@config, @ssm) ->
 
-	handle: (request, response, next) ->
+	handle: (ctx, next) ->
 		if @done
 			await next()
 			return
@@ -21,7 +22,6 @@ export default class SSM
 		@done = true
 
 		await next()
-
 
 	fetch: ->
 		paths = @parseSSM @config

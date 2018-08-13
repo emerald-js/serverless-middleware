@@ -1,6 +1,6 @@
 {
   "name": "@emerald-js/serverless-middleware",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "main": "src/index",
   "license": "MIT",
   "private": false,
@@ -23,7 +23,7 @@
     "test": "jest",
     "prepublish": "bash ./build.sh",
     "postpublish": "yarn cleanup",
-    "cleanup": "rm -f ./src{/**,}/*.js"
+    "cleanup": "rm -f ./{/**,}/*.js; rm -rf http;"
   },
   "babel": {
     "plugins": [

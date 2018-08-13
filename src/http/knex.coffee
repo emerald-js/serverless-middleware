@@ -1,4 +1,5 @@
-export default class Database
+
+export default class Knex
 
 	constructor: (@knex, @config) ->
 

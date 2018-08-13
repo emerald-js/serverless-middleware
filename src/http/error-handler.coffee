@@ -1,3 +1,4 @@
+
 export default class ErrorHandler
 
 	handle: (request, response, next) ->
