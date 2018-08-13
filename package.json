@@ -1,14 +1,15 @@
 {
   "name": "@emerald-js/serverless-middleware",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "main": "src/index",
   "license": "MIT",
+  "private": false,
   "repository": {
     "type": "git",
-    "url": "https://github.com/emerald-js/serverless-middlewares.git"
+    "url": "https://github.com/emerald-js/serverless-middleware.git"
   },
   "bugs": {
-    "url": "https://github.com/emerald-js/serverless-middlewares/issues"
+    "url": "https://github.com/emerald-js/serverless-middleware/issues"
   },
   "dependencies": {},
   "devDependencies": {
@@ -23,9 +24,9 @@
     "preset": "jest-preset-coffeescript"
   },
   "scripts": {
-	"build": "bash ./build.sh",
-	"cleanup": "bash ./clean-up.sh",
+    "cleanup": "bash ./clean-up.sh",
     "test": "jest",
+    "prepublish": "bash ./build.sh",
     "postpublish": "bash ./clean-up.sh"
   }
 }
