@@ -27,7 +27,7 @@ export default class SSM
 		paths = @parseSSM @config
 		names = paths.map (i) -> i.path
 
-		if !names
+		if !names.length
 			return
 
 		params = {
