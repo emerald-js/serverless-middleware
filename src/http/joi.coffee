@@ -4,10 +4,7 @@ export default class Validate
 	constructor: (@joi, @aliases = {}, @rules = {}) ->
 
 	handle: (fields) ->
-		if typeof fields is 'object'
-			schema = fields
-
-		else if typeof fields is 'array'
+		if Array.isArray fields
 			schema = {}
 			for field in fields
 				if rule = @rules[field]
@@ -15,8 +12,11 @@ export default class Validate
 				else
 					throw new Error "No validation rule found for field: #{field}"
 
+		else if fields instanceof Object
+			schema = fields
+
 		else
-			throw new TypeError ""
+			throw new TypeError 'Argument fields must be an object or array'
 
 
 		return (request, response, next) =>

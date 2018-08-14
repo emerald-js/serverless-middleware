@@ -16,7 +16,7 @@ export default class Joi
 					throw new Error "No validation rule found for field: #{field}"
 
 		else
-			throw new TypeError "Argument fields must be an object or array."
+			throw new TypeError 'Argument fields must be an object or array'
 
 		return (ctx, next) =>
 			ctx.input = await @Joi.validate ctx.input, schema
