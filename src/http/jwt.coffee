@@ -1,6 +1,8 @@
 
 export default class JWT
 
+	constructor: (@decoder) ->
+
 	handle: (request, response, next) ->
 		header = request.headers.Authorization
 		if !header
