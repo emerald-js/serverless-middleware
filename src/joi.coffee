@@ -1,13 +1,10 @@
 
 export default class Joi
 
-	constructor: (@Joi, @rules = {}) ->
+	constructor: (@joi, @rules = {}) ->
 
 	handle: (fields) ->
-		if typeof fields is 'object'
-			schema = fields
-
-		else if typeof fields is 'array'
+		if Array.isArray fields
 			schema = {}
 			for field in fields
 				if rule = @rules[field]
@@ -15,10 +12,13 @@ export default class Joi
 				else
 					throw new Error "No validation rule found for field: #{field}"
 
+		else if fields instanceof Object
+			schema = fields
+
 		else
 			throw new TypeError 'Argument fields must be an object or array'
 
 		return (ctx, next) =>
-			ctx.input = await @Joi.validate ctx.input, schema
+			ctx.input = await @joi.validate ctx.input, schema
 
 			await next()
