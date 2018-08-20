@@ -1,9 +1,10 @@
+
 export default class Knex
 
-	constructor: (@Knex, @config) ->
+	constructor: (@knex, @config) ->
 
 	handle: (ctx, next) ->
-		db = new @Knex @config
+		db = new @knex @config
 
 		ctx.db = db
 
