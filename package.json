@@ -1,6 +1,6 @@
 {
   "name": "@emerald-js/serverless-middleware",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "main": "index",
   "license": "MIT",
   "private": false,
